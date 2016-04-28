@@ -1,10 +1,11 @@
 ﻿using System.IO;
 using Funq;
-using React.Sample.ServiceStack.SelfHost.ServiceInterface;
+using React.Sample.SSS.SelfHost.ServiceInterface;
 using ServiceStack;
+using ServiceStack.Logging;
 using ServiceStack.Razor;
 
-namespace React.Sample.ServiceStack.SelfHost
+namespace React.Sample.SSS.SelfHost
 {
     public class AppHost : AppSelfHostBase
     {
@@ -12,10 +13,7 @@ namespace React.Sample.ServiceStack.SelfHost
         ///     Default constructor.
         ///     Base constructor requires a name and assembly to locate web service classes.
         /// </summary>
-        public AppHost()
-            : base("React.Sample.ServiceStack.SelfHost", typeof (MyServices).Assembly)
-        {
-        }
+        public AppHost() : base("React.Sample.SSS.SelfHost", typeof (MyServices).Assembly) { }
 
         /// <summary>
         ///     Application specific configuration
@@ -24,11 +22,21 @@ namespace React.Sample.ServiceStack.SelfHost
         /// <param name="container"></param>
         public override void Configure(Container container)
         {
-            //Config examples
-            //this.Plugins.Add(new PostmanFeature());
-            //this.Plugins.Add(new CorsFeature());
+            ILog log = LogManager.GetLogger(GetType());
 
-            Plugins.Add(new RazorFormat());
+            container.Register<ILog>(log);
+            
+            ReactConfig.Configure();
+
+            var environment = ReactEnvironment.Current;
+            var component = environment.CreateComponent("HelloWorld", new { name = "Daniel" });
+            var html = component.RenderHtml(renderServerOnly: true);
+            
+            Plugins.Add(new RazorFormat
+            {
+                LoadFromAssemblies = { typeof(MyServices).Assembly }
+            });
+
             SetConfig(new HostConfig
             {
 #if DEBUG

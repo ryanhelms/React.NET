@@ -1,13 +1,13 @@
-﻿using React.Sample.ServiceStack.SelfHost.ServiceModel;
+﻿using React.Sample.SSS.SelfHost.ServiceModel;
 using ServiceStack;
 
-namespace React.Sample.ServiceStack.SelfHost.ServiceInterface
+namespace React.Sample.SSS.SelfHost.ServiceInterface
 {
     public class MyServices : Service
     {
-        public object Any(Hello request)
+        public object Any(HelloModel request)
         {
-            return new HelloResponse {Result = "Hello, {0}!".Fmt(request.Name)};
+            return new HelloModelResponse {Result = "Hello, {0}!".Fmt(request.Name)};
         }
     }
 }

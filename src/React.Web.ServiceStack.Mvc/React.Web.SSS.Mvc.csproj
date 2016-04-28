@@ -7,8 +7,8 @@
     <ProjectGuid>{9CE42BFC-ED63-4B5F-A112-7BB367A18357}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>React.Web.ServiceStack</RootNamespace>
-    <AssemblyName>React.Web.ServiceStack</AssemblyName>
+    <RootNamespace>React.Web.SSS.Mvc</RootNamespace>
+    <AssemblyName>React.Web.SSS.Mvc</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

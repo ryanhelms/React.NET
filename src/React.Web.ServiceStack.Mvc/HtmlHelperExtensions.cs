@@ -7,16 +7,16 @@
  *  of patent rights can be found in the PATENTS file in the same directory.
  */
 
+using System.Web;
 using React.Exceptions;
 using React.TinyIoC;
 using ServiceStack.Html;
-using ServiceStack.MiniProfiler;
 using IHtmlHelper = ServiceStack.Html.HtmlHelper;
 
 #if LEGACYASPNET
 namespace React.Web.Mvc
 #else
-namespace React.Web.ServiceStack
+namespace React.Web.SSS.Mvc
 #endif
 {
     /// <summary>
@@ -39,12 +39,7 @@ namespace React.Web.ServiceStack
                 catch (TinyIoCResolutionException ex)
                 {
                     throw new ReactNotInitialisedException(
-#if LEGACYASPNET
 						"ReactJS.NET has not been initialised correctly.",
-#else
-                        "ReactJS.NET has not been initialised correctly. Please ensure you have " +
-                        "called app.AddReact() and app.UseReact() in your Startup.cs file.",
-#endif
                         ex
                     );
                 }
