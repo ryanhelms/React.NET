@@ -1,5 +1,5 @@
 {
-    "version": "2.3.0-*",
+    "version": "2.3.1-*",
     "configurations": {
         "Debug": {
             "compilationOptions": {
@@ -27,9 +27,9 @@
     "JavaScriptEngineSwitcher.V8": "1.5.2",
     "MsieJavaScriptEngine": "1.7.0"
   },
-    "frameworks": {
-        "dnx451": { }
-    },
+  "frameworks": {
+    "dnx451": { }
+  },
 
     "authors": [ "Daniel Lo Nigro" ],
     "owners": [ "Daniel Lo Nigro" ],

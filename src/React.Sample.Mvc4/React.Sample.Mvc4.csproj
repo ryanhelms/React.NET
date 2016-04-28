@@ -180,6 +180,10 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\React.MSBuild\React.MSBuild.csproj">
+      <Project>{af531a37-b93f-4113-9c2c-4db28064b926}</Project>
+      <Name>React.MSBuild</Name>
+    </ProjectReference>
     <ProjectReference Include="..\React.Web.Mvc4\React.Web.Mvc4.csproj">
       <Project>{662d52ac-1ee9-4372-bd74-379f9ac56451}</Project>
       <Name>React.Web.Mvc4</Name>

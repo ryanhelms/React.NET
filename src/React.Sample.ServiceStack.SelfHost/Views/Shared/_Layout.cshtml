@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>ServiceStack Self Host with Razor</title>
+    <style type="text/css">
+        body, h1, h2, input, button {
+            font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #222;
+            background-image: linear-gradient(to bottom, #3c3c3c 0, #222 100%);
+            background-repeat: repeat-x;
+            border: 1px solid transparent;
+            border-color: #080808;
+            color: #999;
+            line-height: 50px;
+            margin-bottom: 20px;
+            min-height: 50px;
+            padding: 0 15px;
+            position: relative;
+        }
+
+        h2 {
+            font: 36px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            padding: 0 0 10px 0;
+        }
+
+        input {
+            padding: 10px;
+            width: 50%;
+        }
+
+        button { padding: 10px; }
+
+        #content {
+            margin: auto;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+<h1 class="navbar">ServiceStack Self Host with Razor</h1>
+<div id="content">
+    @RenderBody()
+</div>
+</body>
+</html>
